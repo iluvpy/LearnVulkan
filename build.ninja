@@ -1,4 +1,4 @@
-cflags = -std=c++17 -O2
+cflags = -std=c++17 -O2 -g
 ldflags = -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi
 
 rule cc
