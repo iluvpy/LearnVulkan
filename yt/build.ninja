@@ -1,0 +1,13 @@
+cflags = -std=c++17 -O2 -g
+ldflags = -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi
+
+rule cc
+    command = clang++ -c $in -o $out $cflags
+rule lnk
+    command = clang++ $in -o $out $ldflags
+
+
+build obj/lvewindow.o: cc src/lve_window.cpp
+build obj/app.o: cc src/app.cpp
+build obj/main.o: cc src/main.cpp
+build client: lnk obj/main.o obj/lvewindow.o obj/app.o

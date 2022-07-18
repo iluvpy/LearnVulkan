@@ -171,6 +171,7 @@ private:
     }
 
     void drawFrame() {
+        // wait for last frame to finish
         vkWaitForFences(m_device, 1, &m_inFlightFence, VK_TRUE, UINT64_MAX);
         vkResetFences(m_device, 1, &m_inFlightFence);
 
