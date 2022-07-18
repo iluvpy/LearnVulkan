@@ -9,6 +9,8 @@ namespace lve {
 class LveWindow {
 public:
     LveWindow(int width, int height, std::string name);
+    LveWindow(const LveWindow&) = delete;
+    LveWindow &operator=(const LveWindow&) = delete;
     bool shouldClose();
     ~LveWindow(); 
 private:
