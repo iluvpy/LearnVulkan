@@ -8,4 +8,7 @@ rule lnk
 
 
 build obj/main.o: cc src/main.cpp
-build client: lnk obj/main.o  
+build obj/window.o: cc src/Window.cpp
+build obj/renderer.o: cc src/Renderer.cpp
+build obj/util.o: cc src/Util.cpp
+build client: lnk obj/main.o obj/window.o obj/renderer.o obj/util.o
